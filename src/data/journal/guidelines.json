@@ -1,0 +1,18 @@
+{
+  "submission_email": "jopsa@psa.com",
+  "cc_email": "jopsa@gmail.com",
+  "rules": [
+    "Manuscripts must be original and not under consideration elsewhere.",
+    "All manuscripts are subjected to a double-blind reviewing process (anonymized).",
+    "Separate title page with author details, bio, and acknowledgement.",
+    "Word count: 5000 - 8000 words (MS Word format). Abstract: Max 200 words.",
+    "Include 4-6 Keywords.",
+    "Format: Times New Roman, 12pt, British/American spelling.",
+    "Evaluation criteria: Readability, literature use, method appropriateness, data significance.",
+    "Citations: APA Referencing Style (7th Edition).",
+    "Submission via email to jopsa@psa.com (copy jopsa@gmail.com).",
+    "No submission/publication fees. Voluntary donations to GAMIP accepted."
+  ],
+  "plagiarism_policy": "Strict peer-review. Similarity index > 20% results in immediate decline.",
+  "copyright_policy": "Copyright remains with the author(s). Permission required for reproduction."
+}

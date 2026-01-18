@@ -1,0 +1,38 @@
+[
+  {
+    "id": "prog_mediation",
+    "title": "Mediation",
+    "description": "Master the art of facilitated negotiation and conflict resolution in professional settings.",
+    "code": "PSA-MED"
+  },
+  {
+    "id": "prog_negotiation",
+    "title": "Negotiation",
+    "description": "Strategic frameworks for achieving optimal outcomes in complex disputes.",
+    "code": "PSA-NEG"
+  },
+  {
+    "id": "prog_arbitration",
+    "title": "Arbitration",
+    "description": "Legal and procedural standards for binding dispute resolution.",
+    "code": "PSA-ARB"
+  },
+  {
+    "id": "prog_leadership",
+    "title": "Leadership",
+    "description": "Executive training for organizational influence and ethical governance.",
+    "code": "PSA-LDR"
+  },
+  {
+    "id": "prog_pm",
+    "title": "Project Management",
+    "description": "End-to-end lifecycle management for development and peace projects.",
+    "code": "PSA-PM"
+  },
+  {
+    "id": "prog_me",
+    "title": "Monitoring & Evaluation",
+    "description": "Data-driven assessment techniques for impact measurement.",
+    "code": "PSA-ME"
+  }
+]
