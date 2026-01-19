@@ -1,0 +1,14 @@
+[
+  {
+    "id": "vol12-no4",
+    "volume": "Vol 12",
+    "number": "No 4",
+    "date": "January 2026",
+    "title": "The Future of Peacekeeping in Digital Frontiers",
+    "cover_color": "#152036",
+    "articles": [
+      { "title": "Digital Mediation: A New Framework", "author": "Dr. A. O. Adeoye", "pages": "1-15" },
+      { "title": "Conflict Dynamics in West Africa", "author": "B. E. Adams", "pages": "16-32" }
+    ]
+  }
+]
