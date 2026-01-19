@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
+// Optimized Cloudinary URLs (f_auto, q_auto applied)
 const images = [
-  "https://images.unsplash.com/photo-1541339907198-e08756edd811?q=80&w=2070", // Placeholder 1
-  "https://images.unsplash.com/photo-1521791136364-798a730bb361?q=80&w=2070", // Placeholder 2
-  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070", // Placeholder 3
-  "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=2070"  // Placeholder 4
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786219/blog_assets/xzzjwx3wxxj902uahjpl.jpg", // Architecture
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786194/blog_assets/uqsvo2wu5lg4mdhsiv0s.jpg", // Handshake
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786178/blog_assets/qyur9rnpasjt9owvlbi7.jpg", // Journal
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786164/blog_assets/birjesviiw5m6w706xh4.jpg"  // Boardroom
 ];
 
 export default function AcademyHero() {
@@ -29,16 +30,17 @@ export default function AcademyHero() {
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.4, scale: 1 }}
+            animate={{ opacity: 0.6, scale: 1 }} // Increased opacity slightly for better visibility of the beautiful art
             exit={{ opacity: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${images[index]})` }}
           />
         </AnimatePresence>
-        {/* Dark Gradient Overlays for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian-900/80 via-transparent to-obsidian-900"></div>
-        <div className="absolute inset-0 bg-obsidian-900/40"></div>
+        
+        {/* Cinematic Gradient Overlays (Crucial for Text Pop) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-obsidian-900/90 via-obsidian-900/40 to-obsidian-900"></div>
+        <div className="absolute inset-0 bg-obsidian-950/30 mix-blend-multiply"></div>
       </div>
 
       {/* === CONTENT === */}
