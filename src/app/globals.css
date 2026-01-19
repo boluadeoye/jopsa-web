@@ -13,9 +13,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Elegant Academic Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0B1221; }
-::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
-
-.scrollbar-hide::-webkit-scrollbar { display: none; }
+/* Hide Scrollbar Utility */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
