@@ -1,10 +1,11 @@
 "use client";
 import { getPrograms } from "@/lib/cms";
-import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Award, Users } from "lucide-react";
+import { motion, Variants } from "framer-motion";
+import { ArrowRight, BookOpen, Award } from "lucide-react";
 import Link from "next/link";
 
-const container = {
+// Define types for the animation objects
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -12,9 +13,13 @@ const container = {
   }
 };
 
-const item = {
+const item: Variants = {
   hidden: { y: 30, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 50 } }
+  show: { 
+    y: 0, 
+    opacity: 1, 
+    transition: { type: "spring", stiffness: 50 } 
+  }
 };
 
 export default function ProgramsPage() {
@@ -47,7 +52,7 @@ export default function ProgramsPage() {
           animate="show"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {programs.map((prog) => (
+          {programs.map((prog: any) => (
             <motion.div key={prog.id} variants={item} className="group relative h-full">
               <div className="absolute inset-0 bg-gold-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               
