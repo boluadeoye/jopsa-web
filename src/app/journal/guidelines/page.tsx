@@ -1,9 +1,10 @@
 "use client";
 import { getGuidelines } from "@/lib/cms";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { FileText, ShieldAlert, Copyright, Send } from "lucide-react";
 
-const container = {
+// Define types for animation variants
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -11,9 +12,13 @@ const container = {
   }
 };
 
-const item = {
+const item: Variants = {
   hidden: { x: -20, opacity: 0 },
-  show: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 50 } }
+  show: { 
+    x: 0, 
+    opacity: 1, 
+    transition: { type: "spring", stiffness: 50 } 
+  }
 };
 
 export default function SubmissionPage() {
