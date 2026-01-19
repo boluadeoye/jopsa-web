@@ -7,103 +7,94 @@ export default function DeanWelcome() {
   const { dean_welcome } = siteData.academy;
 
   return (
-    <section className="relative py-32 px-4 md:px-8 bg-[#050a14] overflow-hidden flex justify-center">
+    <section className="relative py-32 px-4 bg-obsidian-950 overflow-hidden flex justify-center">
       
-      {/* === AMBIENT BACKGROUND === */}
+      {/* === AMBIENT ATMOSPHERE === */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,#1a2333_0%,#020408_100%)]"></div>
-        <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
-        {/* Gold Glows */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-500/5 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold-500/5 blur-[120px] rounded-full"></div>
+        {/* Deep Blue Base */}
+        <div className="absolute inset-0 bg-[#020408]"></div>
+        {/* Gold Ambient Light (Softness) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/5 blur-[150px] rounded-full pointer-events-none"></div>
+        {/* Texture */}
+        <div className="absolute inset-0 opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
-      {/* === THE ROYAL CARD === */}
+      {/* === THE PRESIDENTIAL CARD === */}
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-3xl w-full bg-[#FDFBF7] text-obsidian-900 p-8 md:p-20 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]"
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative z-10 max-w-5xl w-full"
       >
-        {/* === ORNAMENTAL BORDER === */}
-        <div className="absolute inset-4 border border-gold-500/30 pointer-events-none"></div>
-        <div className="absolute inset-5 border border-dotted border-gold-500/20 pointer-events-none"></div>
-        
-        {/* Corner Flourishes (CSS Shapes) */}
-        <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-gold-500"></div>
-        <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-gold-500"></div>
-        <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-gold-500"></div>
-        <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-gold-500"></div>
-
-        {/* === WATERMARK === */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-[0.03] pointer-events-none">
-           <svg viewBox="0 0 100 100" fill="currentColor" className="w-full h-full text-obsidian-900">
-             <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="2" fill="none" />
-             <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="1" fill="none" />
-             <text x="50" y="55" textAnchor="middle" fontSize="20" fontFamily="serif" fontWeight="bold">JP</text>
-           </svg>
-        </div>
-
-        {/* === CONTENT === */}
-        <div className="relative z-10 text-center">
+        {/* The Paper Container */}
+        <div className="relative bg-gradient-to-b from-[#fffefb] to-[#f2efe9] rounded-[3rem] p-8 md:p-20 shadow-2xl overflow-hidden">
           
-          {/* Icon */}
-          <div className="inline-flex justify-center mb-8">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gold-500 blur-lg opacity-20"></div>
-              <Quote size={40} className="text-gold-600 relative z-10 fill-gold-500/10" />
-            </div>
-          </div>
+          {/* Subtle Grain on Paper */}
+          <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] mix-blend-multiply pointer-events-none"></div>
+          
+          {/* Decorative Top Accent */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-gold-500 rounded-b-full shadow-lg shadow-gold-500/30"></div>
 
-          {/* Title (Gold Foil Effect) */}
-          <h2 className="font-serif text-4xl md:text-5xl mb-8 tracking-tight">
-            <span className="bg-gradient-to-r from-obsidian-900 via-slate-700 to-obsidian-900 bg-clip-text text-transparent font-medium">
-              {dean_welcome.title}
-            </span>
-          </h2>
-
-          {/* Divider */}
-          <div className="flex justify-center items-center gap-4 mb-10 opacity-40">
-            <div className="h-px w-12 bg-gold-600"></div>
-            <div className="w-2 h-2 rotate-45 border border-gold-600"></div>
-            <div className="h-px w-12 bg-gold-600"></div>
-          </div>
-
-          {/* Body Text */}
-          <div className="text-left md:text-center">
-            <p className="font-serif text-xl md:text-2xl text-slate-800 leading-[1.8] font-light">
-              <span className="float-left text-6xl md:text-7xl font-serif text-gold-500 mr-4 mt-[-8px] leading-none drop-shadow-sm">
-                {dean_welcome.content.charAt(0)}
-              </span>
-              {dean_welcome.content.slice(1)}
-            </p>
-          </div>
-
-          {/* Signature Block */}
-          <div className="mt-16 pt-10 flex flex-col items-center relative">
-            {/* Wax Seal Graphic (CSS) */}
-            <div className="absolute -top-6 right-10 md:right-32 w-24 h-24 rounded-full bg-red-900/10 blur-xl pointer-events-none"></div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <p className="font-serif text-5xl md:text-6xl text-obsidian-900 mb-3 transform -rotate-2" style={{ fontFamily: 'cursive' }}>
-                {dean_welcome.signature_name}
-              </p>
-            </motion.div>
+          <div className="relative z-10 flex flex-col md:flex-row gap-12 items-center md:items-start">
             
-            <div className="flex flex-col items-center gap-1">
-              <div className="h-0.5 w-16 bg-gold-500"></div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
-                {dean_welcome.designation}
-              </p>
+            {/* LEFT: The Hook (Quote & Title) */}
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-block p-4 rounded-full bg-gold-500/10 text-gold-600 mb-8">
+                <Quote size={32} className="fill-gold-500/20" />
+              </div>
+              
+              <h2 className="font-serif text-4xl md:text-6xl text-obsidian-900 mb-6 leading-tight tracking-tight">
+                {dean_welcome.title}
+              </h2>
+              
+              <div className="h-px w-24 bg-slate-300 md:mx-0 mx-auto mb-8"></div>
+
+              {/* The "P" Drop Cap Paragraph */}
+              <div className="prose prose-lg text-slate-700 font-serif leading-relaxed">
+                <p className="text-lg md:text-xl font-light">
+                  <span className="float-left text-7xl font-serif text-gold-500 mr-4 mt-[-12px] leading-none drop-shadow-sm">
+                    {dean_welcome.content.charAt(0)}
+                  </span>
+                  {dean_welcome.content.slice(1)}
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT: The Authority (Signature & Profile) */}
+            <div className="w-full md:w-1/3 flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-slate-200 pt-10 md:pt-0 md:pl-12">
+              
+              {/* Profile Silhouette / Placeholder */}
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-slate-100 to-slate-200 border-4 border-white shadow-xl flex items-center justify-center mb-8 overflow-hidden">
+                <span className="font-serif text-4xl text-slate-300 font-bold">JP</span>
+              </div>
+
+              {/* Signature */}
+              <div className="text-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                >
+                  <p className="font-serif text-4xl md:text-5xl text-obsidian-900 mb-2 transform -rotate-3" style={{ fontFamily: 'cursive' }}>
+                    {dean_welcome.signature_name}
+                  </p>
+                </motion.div>
+                
+                <div className="mt-4 px-4 py-1 border border-gold-500/30 rounded-full bg-gold-500/5 inline-block">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-obsidian-800">
+                    {dean_welcome.designation}
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
-
         </div>
+        
+        {/* Bottom Glow Effect */}
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[90%] h-20 bg-gold-500/20 blur-[60px] rounded-full -z-10"></div>
+
       </motion.div>
     </section>
   );
