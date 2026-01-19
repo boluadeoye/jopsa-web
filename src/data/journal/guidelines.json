@@ -1,18 +1,19 @@
 {
   "submission_email": "jopsa@psa.com",
   "cc_email": "jopsa@gmail.com",
+  "scope": "Conflict & Peace Science, Administrative & Management Sciences.",
   "rules": [
     "Manuscripts must be original and not under consideration elsewhere.",
     "All manuscripts are subjected to a double-blind reviewing process (anonymized).",
-    "Separate title page with author details, bio, and acknowledgement.",
-    "Word count: 5000 - 8000 words (MS Word format). Abstract: Max 200 words.",
-    "Include 4-6 Keywords.",
-    "Format: Times New Roman, 12pt, British/American spelling.",
-    "Evaluation criteria: Readability, literature use, method appropriateness, data significance.",
-    "Citations: APA Referencing Style (7th Edition).",
-    "Submission via email to jopsa@psa.com (copy jopsa@gmail.com).",
-    "No submission/publication fees. Voluntary donations to GAMIP accepted."
+    "A separate title page must be submitted containing title, author’s name, contact, bio, and acknowledgement.",
+    "Manuscripts should be between 5000 and 8000 words in MS Word format with an abstract of max 200 words.",
+    "Manuscript should have Four to six keywords included.",
+    "Format: Times New Roman, 12 font size, British or American spelling.",
+    "Evaluation parameters: Readability, literature/theory use, method appropriateness, data significance, contribution to knowledge.",
+    "Citations and references must follow APA referencing style (7th Edition).",
+    "Submission via email to: jopsa@psa.com and copy jopsa@gmail.com.",
+    "No submission or publication fee. Voluntary donations to GAMIP are accepted."
   ],
-  "plagiarism_policy": "Strict peer-review. Similarity index > 20% results in immediate decline.",
-  "copyright_policy": "Copyright remains with the author(s). Permission required for reproduction."
+  "plagiarism_policy": "Strict peer-review. Any manuscript with a similarity index greater than 20% will be declined.",
+  "copyright_policy": "Copyright remains with the author(s). Permission must be obtained for reproduction. Once published, it cannot be published elsewhere without permission."
 }
