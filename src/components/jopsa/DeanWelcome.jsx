@@ -45,17 +45,17 @@ export default function DeanWelcome() {
               <div className="h-px w-16 bg-slate-300 mx-auto"></div>
             </div>
 
-            {/* BODY (Left Aligned for Drop Cap) */}
+            {/* BODY (Italicized & Elegant) */}
             <div className="prose prose-lg max-w-none text-slate-800 font-serif leading-relaxed text-left">
-              <p className="text-lg md:text-xl font-light">
-                <span className="float-left text-7xl md:text-8xl font-serif text-gold-500 mr-4 mt-[-10px] md:mt-[-18px] leading-none drop-shadow-sm">
+              <p className="text-xl md:text-2xl font-medium italic tracking-wide">
+                <span className="float-left text-7xl md:text-8xl font-serif text-gold-500 mr-4 mt-[-6px] md:mt-[-12px] leading-none drop-shadow-sm not-italic">
                   {dean_welcome.content.charAt(0)}
                 </span>
                 {dean_welcome.content.slice(1)}
               </p>
             </div>
 
-            {/* SIGNATURE (Right Aligned for Balance) */}
+            {/* SIGNATURE (Right Aligned) */}
             <div className="flex flex-col items-end mt-8 pt-8 border-t border-slate-100">
               <div className="text-right">
                 <motion.div
