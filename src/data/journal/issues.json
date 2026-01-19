@@ -6,9 +6,16 @@
     "date": "January 2026",
     "title": "The Future of Peacekeeping in Digital Frontiers",
     "cover_color": "#152036",
+    "featured_article": {
+      "title": "Digital Mediation: A New Framework for Conflict Resolution",
+      "author": "Dr. A. O. Adeoye",
+      "abstract": "This paper explores the efficacy of asynchronous digital communication tools in de-escalating high-tension inter-communal disputes. By analyzing data from three pilot programs in West Africa, we propose a new 'Digital Buffer' framework...",
+      "slug": "digital-mediation-framework"
+    },
     "articles": [
-      { "title": "Digital Mediation: A New Framework", "author": "Dr. A. O. Adeoye", "pages": "1-15" },
-      { "title": "Conflict Dynamics in West Africa", "author": "B. E. Adams", "pages": "16-32" }
+      { "title": "Digital Mediation: A New Framework", "author": "Dr. A. O. Adeoye", "pages": "1-15", "slug": "digital-mediation-framework" },
+      { "title": "Conflict Dynamics in West Africa", "author": "B. E. Adams", "pages": "16-32", "slug": "conflict-dynamics" },
+      { "title": "The Role of Informal Committees", "author": "C. Ogunko", "pages": "33-45", "slug": "informal-committees" }
     ]
   }
 ]
