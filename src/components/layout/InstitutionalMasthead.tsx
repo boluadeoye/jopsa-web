@@ -10,6 +10,11 @@ export default function InstitutionalMasthead() {
   const isJournal = pathname.startsWith("/journal");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // === CONTEXT-AWARE BRANDING ===
+  const brandInitials = isJournal ? "JP" : "PSA";
+  const brandTitle = isJournal ? "Journal of Peace Service Academy" : "Peace Service Academy";
+  const brandSubtitle = isJournal ? "Scholarly Repository" : "Institutional Excellence • Est. 2020";
+
   // Close menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -27,19 +32,26 @@ export default function InstitutionalMasthead() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-obsidian-900 text-white border-b border-gold-600/30 shadow-2xl">
+      <header className="sticky top-0 z-50 bg-obsidian-900 text-white border-b border-gold-600/30 shadow-2xl transition-all duration-500">
         {/* Top Identity Bar */}
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center relative z-50 bg-obsidian-900">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-gold-500 flex items-center justify-center font-serif text-gold-500 font-bold text-lg md:text-xl group-hover:bg-gold-500 group-hover:text-obsidian-900 transition-all">
-              JP
+            {/* Dynamic Logo Circle */}
+            <div className={`
+              rounded-full border-2 border-gold-500 flex items-center justify-center font-serif text-gold-500 font-bold transition-all duration-500
+              ${isJournal ? 'w-10 h-10 md:w-12 md:h-12 text-lg md:text-xl' : 'w-12 h-12 md:w-14 md:h-14 text-sm md:text-base tracking-tighter'}
+              group-hover:bg-gold-500 group-hover:text-obsidian-900
+            `}>
+              {brandInitials}
             </div>
+            
+            {/* Dynamic Title */}
             <div className="flex flex-col">
-              <h1 className="font-serif text-base md:text-lg tracking-wide leading-none uppercase">
-                Peace Service Academy
+              <h1 className="font-serif text-base md:text-lg tracking-wide leading-none uppercase transition-all duration-300">
+                {brandTitle}
               </h1>
               <p className="text-[8px] md:text-[9px] text-gold-400 uppercase tracking-[0.2em] mt-1 font-bold hidden sm:block">
-                Institutional Excellence • Est. 2020
+                {brandSubtitle}
               </p>
             </div>
           </Link>
@@ -84,70 +96,70 @@ export default function InstitutionalMasthead() {
                 <>
                   <li><Link href="/journal/current" className="hover:text-white transition-colors">Current Issue</Link></li>
                   <li><Link href="/journal/archives" className="hover:text-white transition-colors">Archives</Link></li>
-                  <li><Link href="/journal/submit" className="hover:text-white transition-colors">Submission Portal</Link></li>
+                  <li><Link href="/journal/guidelines" className="hover:text-white transition-colors">Submission Portal</Link></li>
                   <li><Link href="/journal/editorial-board" className="hover:text-white transition-colors">Editorial Board</Link></li>
                 </>
               )}
             </ul>
           </div>
         </nav>
+
+        {/* === MOBILE MENU OVERLAY === */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-obsidian-950/95 backdrop-blur-xl pt-24 px-6 md:hidden flex flex-col"
+            >
+              {/* Mobile Wing Switcher */}
+              <div className="flex bg-obsidian-900 rounded-xl p-1.5 border border-white/10 mb-8">
+                <Link 
+                  href="/academy" 
+                  className={`flex-1 text-center py-3 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${!isJournal ? 'bg-gold-500 text-obsidian-900 shadow-lg' : 'text-slate-500'}`}
+                >
+                  Academy
+                </Link>
+                <Link 
+                  href="/journal" 
+                  className={`flex-1 text-center py-3 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${isJournal ? 'bg-white text-obsidian-900 shadow-lg' : 'text-slate-500'}`}
+                >
+                  Journal
+                </Link>
+              </div>
+
+              {/* Mobile Links List */}
+              <div className="flex-1 overflow-y-auto">
+                <ul className="flex flex-col gap-6 text-lg font-serif text-white">
+                  {!isJournal ? (
+                    <>
+                      <li className="border-b border-white/5 pb-4"><Link href="/academy/programs" className="block hover:text-gold-500">Programs</Link></li>
+                      <li className="border-b border-white/5 pb-4"><Link href="/academy/services" className="block hover:text-gold-500">Business Services</Link></li>
+                      <li className="border-b border-white/5 pb-4"><Link href="/academy/partners" className="block hover:text-gold-500">Partnerships</Link></li>
+                      <li className="border-b border-white/5 pb-4"><Link href="/academy/about" className="block hover:text-gold-500">About Academy</Link></li>
+                    </>
+                  ) : (
+                    <>
+                      <li className="border-b border-white/5 pb-4"><Link href="/journal/current" className="block hover:text-gold-500">Current Issue</Link></li>
+                      <li className="border-b border-white/5 pb-4"><Link href="/journal/archives" className="block hover:text-gold-500">Archives</Link></li>
+                      <li className="border-b border-white/5 pb-4"><Link href="/journal/guidelines" className="block hover:text-gold-500">Submission Portal</Link></li>
+                      <li className="border-b border-white/5 pb-4"><Link href="/journal/editorial-board" className="block hover:text-gold-500">Editorial Board</Link></li>
+                    </>
+                  )}
+                </ul>
+              </div>
+
+              {/* Footer Info */}
+              <div className="py-8 text-center border-t border-white/10">
+                <p className="text-[10px] text-slate-500 uppercase tracking-widest">
+                  © 2026 Peace Service Academy
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
-
-      {/* === MOBILE MENU OVERLAY === */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-obsidian-950/95 backdrop-blur-xl pt-24 px-6 md:hidden flex flex-col"
-          >
-            {/* Mobile Wing Switcher */}
-            <div className="flex bg-obsidian-900 rounded-xl p-1.5 border border-white/10 mb-8">
-              <Link 
-                href="/academy" 
-                className={`flex-1 text-center py-3 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${!isJournal ? 'bg-gold-500 text-obsidian-900 shadow-lg' : 'text-slate-500'}`}
-              >
-                Academy
-              </Link>
-              <Link 
-                href="/journal" 
-                className={`flex-1 text-center py-3 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${isJournal ? 'bg-white text-obsidian-900 shadow-lg' : 'text-slate-500'}`}
-              >
-                Journal
-              </Link>
-            </div>
-
-            {/* Mobile Links List */}
-            <div className="flex-1 overflow-y-auto">
-              <ul className="flex flex-col gap-6 text-lg font-serif text-white">
-                {!isJournal ? (
-                  <>
-                    <li className="border-b border-white/5 pb-4"><Link href="/academy/programs" className="block hover:text-gold-500">Programs</Link></li>
-                    <li className="border-b border-white/5 pb-4"><Link href="/academy/services" className="block hover:text-gold-500">Business Services</Link></li>
-                    <li className="border-b border-white/5 pb-4"><Link href="/academy/partners" className="block hover:text-gold-500">Partnerships</Link></li>
-                    <li className="border-b border-white/5 pb-4"><Link href="/academy/about" className="block hover:text-gold-500">About Academy</Link></li>
-                  </>
-                ) : (
-                  <>
-                    <li className="border-b border-white/5 pb-4"><Link href="/journal/current" className="block hover:text-gold-500">Current Issue</Link></li>
-                    <li className="border-b border-white/5 pb-4"><Link href="/journal/archives" className="block hover:text-gold-500">Archives</Link></li>
-                    <li className="border-b border-white/5 pb-4"><Link href="/journal/submit" className="block hover:text-gold-500">Submission Portal</Link></li>
-                    <li className="border-b border-white/5 pb-4"><Link href="/journal/editorial-board" className="block hover:text-gold-500">Editorial Board</Link></li>
-                  </>
-                )}
-              </ul>
-            </div>
-
-            {/* Footer Info */}
-            <div className="py-8 text-center border-t border-white/10">
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest">
-                © 2026 Peace Service Academy
-              </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
