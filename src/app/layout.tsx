@@ -15,9 +15,20 @@ const lato = Lato({
   display: "swap",
 });
 
+// === FIXED METADATA: PSA IDENTITY ===
 export const metadata = {
-  title: "Journal of Peace Service Academy | JOPSA",
-  description: "A distinguished digital platform for academic inquiry and peace-building.",
+  title: {
+    template: '%s | PSA',
+    default: 'Peace Service Academy | PSA',
+  },
+  description: "A distinguished institution committed to excellence in mediation, negotiation, and leadership training.",
+  openGraph: {
+    title: 'Peace Service Academy',
+    description: 'Empowering the next generation of peace-builders through rigorous academic inquiry and practical service.',
+    siteName: 'Peace Service Academy',
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
