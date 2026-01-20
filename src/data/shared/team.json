@@ -1,7 +1,7 @@
 {
   "director": {
     "name": "Dr. Ose Irene",
-    "role": "Director / Managing Editor",
+    "role": "President / Board Chair",
     "email": "jopsa@psa.com",
     "phone": "+234 80 266 599 58"
   },
@@ -19,17 +19,14 @@
   "partners": [
     {
       "name": "Global Alliance for Ministries and Infrastructures for Peace (GAMIP)",
-      "role": "Strategic Partner"
+      "role": "Strategic Partner",
+      "url": "https://gamip.org"
     },
     {
       "name": "Centre for Peace and Rehabilitation of Displaced Persons (CePReDiP)",
-      "role": "Strategic Partner"
+      "role": "Strategic Partner",
+      "url": "http://cepredip.org.ng"
     }
   ],
-  "address": "15 Safori Area, Orogun, Ibadan, Nigeria",
-  "business_services": [
-    "Excellent Editing Services",
-    "Book Publication",
-    "Sales of Education Books and Materials"
-  ]
+  "address": "15 Safori Area, Orogun, Ibadan, Nigeria"
 }
