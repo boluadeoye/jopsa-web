@@ -11,6 +11,8 @@ export default function InstitutionalMasthead() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // === CONTEXT-AWARE BRANDING ===
+  // If we are in /journal, show "JP" and "Journal of..."
+  // Otherwise (Home/Academy), show "PSA" and "Peace Service Academy"
   const brandInitials = isJournal ? "JP" : "PSA";
   const brandTitle = isJournal ? "Journal of Peace Service Academy" : "Peace Service Academy";
   const brandSubtitle = isJournal ? "Scholarly Repository" : "Institutional Excellence • Est. 2020";
@@ -32,14 +34,16 @@ export default function InstitutionalMasthead() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-obsidian-900 text-white border-b border-gold-600/30 shadow-2xl transition-all duration-500">
+      {/* key={pathname} forces a re-render on navigation */}
+      <header key={pathname} className="sticky top-0 z-50 bg-obsidian-900 text-white border-b border-gold-600/30 shadow-2xl transition-all duration-500">
+        
         {/* Top Identity Bar */}
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center relative z-50 bg-obsidian-900">
           <Link href="/" className="flex items-center gap-3 group">
             {/* Dynamic Logo Circle */}
             <div className={`
               rounded-full border-2 border-gold-500 flex items-center justify-center font-serif text-gold-500 font-bold transition-all duration-500
-              ${isJournal ? 'w-10 h-10 md:w-12 md:h-12 text-lg md:text-xl' : 'w-12 h-12 md:w-14 md:h-14 text-sm md:text-base tracking-tighter'}
+              ${brandInitials === "PSA" ? 'w-12 h-12 md:w-14 md:h-14 text-sm md:text-base tracking-tighter' : 'w-10 h-10 md:w-12 md:h-12 text-lg md:text-xl'}
               group-hover:bg-gold-500 group-hover:text-obsidian-900
             `}>
               {brandInitials}
