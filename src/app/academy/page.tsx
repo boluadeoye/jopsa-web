@@ -27,7 +27,7 @@ const sections = [
   },
   {
     title: "Leadership & Governance",
-    desc: "Meet the Director and the Governing Council.",
+    desc: "Meet the President and the Governing Council.",
     icon: <Award size={32} />,
     href: "/academy/about",
     color: "bg-amber-900"
@@ -63,8 +63,9 @@ export default function AcademyHome() {
             </div>
           </motion.div>
           
+          {/* UPDATED TITLE */}
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-serif text-5xl md:text-7xl mb-6 tracking-tight">
-            The Academy
+            The <span className="text-gold-500">GAMIP</span> Academy
           </motion.h1>
           
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -84,23 +85,17 @@ export default function AcademyHome() {
           {sections.map((s, i) => (
             <motion.div key={i} variants={item}>
               <Link href={s.href} className="group relative block h-full p-8 md:p-12 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all overflow-hidden">
-                
-                {/* Hover Glow */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br from-gold-500 to-transparent`}></div>
-                
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="mb-6 p-4 bg-obsidian-900 rounded-2xl w-fit text-gold-500 border border-white/10 group-hover:scale-110 transition-transform duration-500">
                     {s.icon}
                   </div>
-                  
                   <h3 className="font-serif text-3xl text-white mb-3 group-hover:text-gold-400 transition-colors">
                     {s.title}
                   </h3>
-                  
                   <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
                     {s.desc}
                   </p>
-                  
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white group-hover:gap-4 transition-all">
                     <span>Explore</span>
                     <ArrowRight size={14} className="text-gold-500" />

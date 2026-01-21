@@ -1,9 +1,11 @@
 {
   "editor_in_chief": "Dr. Oseremen Irene",
-  "managing_team": [
-    "Dr. Ose Irene",
-    "Engr. Benson Ehis Adams",
-    "Dr. Chris Ogunko",
-    "Gbenga Ogunkola"
+  "board_members": [
+    { "name": "Dr. Oseremen Irene", "role": "Board Chair" },
+    { "name": "Benson Ehis Adams", "role": "Member" },
+    { "name": "Dr. Christopher Ogunkoirene", "role": "Member" },
+    { "name": "Prof. Bishnu Mohapatra", "role": "Member" },
+    { "name": "Paul Maillet", "role": "Member" },
+    { "name": "Vijay Mehta", "role": "Member" }
   ]
 }

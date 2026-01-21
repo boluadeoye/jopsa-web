@@ -2,19 +2,17 @@
   "director": {
     "name": "Dr. Ose Irene",
     "role": "President / Board Chair",
-    "email": "jopsa@psa.com",
-    "phone": "+234 80 266 599 58"
-  },
-  "managing_editor": {
-    "name": "Dr. Oseremen Irene",
-    "email": "ose@psa.com",
-    "cc": "osereme1@gmail.com"
+    "email": "JoPSA@psa.com",
+    "personal_email": "oseremeirene493@gmail.com",
+    "phone": "+1 204-891-7970"
   },
   "board": [
-    "Dr. Ose Irene",
-    "Engr. Benson Ehis Adams",
-    "Dr. Chris Ogunko",
-    "Gbenga Ogunkola"
+    "Dr. Oseremen Irene (Board Chair)",
+    "Benson Ehis Adams (Member)",
+    "Dr. Christopher Ogunkoirene (Member)",
+    "Prof. Bishnu Mohapatra (Member)",
+    "Paul Maillet (Member)",
+    "Vijay Mehta (Member)"
   ],
   "partners": [
     {
@@ -28,5 +26,24 @@
       "url": "http://cepredip.org.ng"
     }
   ],
-  "address": "15 Safori Area, Orogun, Ibadan, Nigeria"
+  "addresses": [
+    {
+      "country": "Nigeria",
+      "line": "15 Safori Area, Orogun, Ibadan, Nigeria"
+    },
+    {
+      "country": "Canada",
+      "line": "83 Smith Street, Winnipeg, MB R3C1J4, Canada"
+    }
+  ],
+  "phones": [
+    "+1 204-891-7970",
+    "+234 802 665 995 8",
+    "+234 81 425 436 48",
+    "+234 81 484 735 08"
+  ],
+  "emails": [
+    "JoPSA@psa.com",
+    "oseremeirene493@gmail.com"
+  ]
 }
