@@ -4,12 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
 
-// Optimized Cloudinary URLs
+// OFFICIAL PSA LOGO
+const LOGO_URL = "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1769142511/blog_assets/dxbchgsoje3rjcwyq0zh.png";
+
 const images = [
-  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786219/blog_assets/xzzjwx3wxxj902uahjpl.jpg", // Architecture
-  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786194/blog_assets/uqsvo2wu5lg4mdhsiv0s.jpg", // Handshake
-  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786178/blog_assets/qyur9rnpasjt9owvlbi7.jpg", // Journal
-  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786164/blog_assets/birjesviiw5m6w706xh4.jpg"  // Boardroom
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786219/blog_assets/xzzjwx3wxxj902uahjpl.jpg",
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786194/blog_assets/uqsvo2wu5lg4mdhsiv0s.jpg",
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786178/blog_assets/qyur9rnpasjt9owvlbi7.jpg",
+  "https://res.cloudinary.com/dwbjb3svx/image/upload/f_auto,q_auto/v1768786164/blog_assets/birjesviiw5m6w706xh4.jpg"
 ];
 
 const content = [
@@ -30,9 +32,9 @@ export default function AcademyHero() {
   }, []);
 
   return (
-    <section className="relative h-[95vh] w-full flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-obsidian-950">
+    <section className="relative h-[100vh] w-full flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-obsidian-950">
       
-      {/* === CINEMATIC BACKGROUND (Ken Burns Effect) === */}
+      {/* === BACKGROUND === */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
@@ -43,7 +45,6 @@ export default function AcademyHero() {
             transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            {/* The Image Layer */}
             <motion.div 
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${images[index]})` }}
@@ -52,35 +53,40 @@ export default function AcademyHero() {
             />
           </motion.div>
         </AnimatePresence>
-        
-        {/* === LUXURY OVERLAYS === */}
-        {/* 1. Darken base */}
         <div className="absolute inset-0 bg-obsidian-950/40"></div>
-        {/* 2. Gradient from bottom (for text readability) */}
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/60 to-transparent"></div>
-        {/* 3. Vignette (Focus center) */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#020408_120%)]"></div>
-        {/* 4. Texture */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
       {/* === CONTENT LAYER === */}
-      <div className="relative z-10 max-w-6xl w-full flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl w-full flex flex-col items-center pt-10">
         
-        {/* Animated Seal */}
+        {/* 1. THE LOGO */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-10"
+          className="mb-6"
         >
-          <div className="w-20 h-20 border border-gold-500/50 rounded-full flex items-center justify-center backdrop-blur-md bg-obsidian-900/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
-            <span className="font-serif text-2xl text-gold-500 font-bold">JP</span>
+          <div className="w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md shadow-[0_0_50px_rgba(212,175,55,0.4)] border border-gold-500/30 p-2">
+            <img src={LOGO_URL} alt="PSA Logo" className="w-full h-full object-contain drop-shadow-xl" />
           </div>
         </motion.div>
 
-        {/* Dynamic Headlines */}
-        <div className="h-48 md:h-64 flex flex-col items-center justify-center overflow-hidden">
+        {/* 2. THE AFFILIATION STATEMENT */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mb-8 max-w-4xl bg-obsidian-900/60 backdrop-blur-md border-y border-gold-500/30 py-4 px-6 md:px-10"
+        >
+          <p className="font-serif text-sm md:text-lg text-white leading-relaxed font-medium tracking-wide">
+            <span className="text-gold-400 font-bold">Peace Service Academy (PSA)</span> is affiliated to the <span className="text-gold-400 font-bold">Global Alliance for Ministries and Infrastructures for Peace (GAMIP)</span> as GAMIP training and academic unit committed to empowerment and capacity building as well as promoting scholarly publications via its <span className="italic">Journal of Peace Service Academy (JoPSA)</span>.
+          </p>
+        </motion.div>
+
+        {/* 3. DYNAMIC HEADLINES */}
+        <div className="h-32 md:h-40 flex flex-col items-center justify-center overflow-hidden mb-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -90,25 +96,17 @@ export default function AcademyHero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex flex-col items-center"
             >
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.1] text-white drop-shadow-2xl mb-4">
+              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1] text-white drop-shadow-2xl mb-2">
                 {content[index].title}
               </h1>
-              <p className="font-sans text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-gold-400">
+              <p className="font-sans text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-gold-500">
                 {content[index].subtitle}
               </p>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Divider */}
-        <motion.div 
-          initial={{ width: 0 }}
-          animate={{ width: "100px" }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="h-1 bg-gold-500 mb-12 shadow-[0_0_15px_#D4AF37]"
-        />
-
-        {/* Premium Buttons */}
+        {/* 4. BUTTONS */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -132,7 +130,7 @@ export default function AcademyHero() {
 
       </div>
 
-      {/* === PROGRESS BAR & INDICATORS === */}
+      {/* PROGRESS BAR */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
         <motion.div
           key={index}
@@ -142,16 +140,6 @@ export default function AcademyHero() {
           className="h-full bg-gold-500 shadow-[0_0_10px_#D4AF37]"
         />
       </div>
-      
-      <div className="absolute bottom-8 right-8 flex gap-2 z-20">
-        {images.map((_, i) => (
-          <div 
-            key={i} 
-            className={`h-1.5 transition-all duration-500 rounded-full ${i === index ? 'w-8 bg-white' : 'w-2 bg-white/30'}`}
-          />
-        ))}
-      </div>
-
     </section>
   );
 }
