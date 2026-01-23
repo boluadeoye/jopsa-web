@@ -1,0 +1,16 @@
+[
+  {
+    "year": "2025",
+    "volumes": [
+      { "id": "vol11-no2", "title": "Vol 11, No 2", "theme": "Post-Conflict Reconstruction", "date": "Dec 2025" },
+      { "id": "vol11-no1", "title": "Vol 11, No 1", "theme": "Youth in Peacebuilding", "date": "Jun 2025" }
+    ]
+  },
+  {
+    "year": "2024",
+    "volumes": [
+      { "id": "vol10-no2", "title": "Vol 10, No 2", "theme": "Electoral Violence Mitigation", "date": "Dec 2024" },
+      { "id": "vol10-no1", "title": "Vol 10, No 1", "theme": "Women in Security", "date": "Jun 2024" }
+    ]
+  }
+]
