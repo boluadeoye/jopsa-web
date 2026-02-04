@@ -1,64 +1,119 @@
 "use client";
 import { motion } from "framer-motion";
-import { Lock, ShieldAlert, MessageSquare, User } from "lucide-react";
+import { Lock, ShieldAlert, Activity, Terminal, AlertTriangle } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function LockedPage() {
+  const [attempts, setAttempts] = useState(14892);
+  const [logs, setLogs] = useState([
+    "SYSTEM: Security Protocol Alpha-9 Active",
+    "MONITOR: Tracking unauthorized IP signatures...",
+  ]);
+
+  // Simulate live counter increasing
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAttempts(prev => prev + Math.floor(Math.random() * 3));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Simulate live logs
+  useEffect(() => {
+    const possibleLogs = [
+      "BLOCKED: GET /wp-admin/setup-config.php",
+      "BLOCKED: POST /xmlrpc.php",
+      "WARN: Unauthorized Admin Access Attempt",
+      "FIREWALL: IP Address Flagged",
+      "BLOCKED: GET /wordpress/wp-login.php"
+    ];
+
+    const interval = setInterval(() => {
+      const newLog = possibleLogs[Math.floor(Math.random() * possibleLogs.length)];
+      const timestamp = new Date().toLocaleTimeString('en-US', { hour12: false });
+      setLogs(prev => [`[${timestamp}] ${newLog}`, ...prev.slice(0, 4)]);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#020408] flex items-center justify-center p-6 font-sans overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#152036_0%,#020408_100%)] opacity-50"></div>
+    <div className="min-h-screen bg-[#020408] flex items-center justify-center p-6 font-mono overflow-hidden relative">
       
+      {/* Red Alert Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#3f0a0a_0%,#020408_80%)] opacity-40 animate-pulse"></div>
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05]"></div>
+
       <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="relative z-10 max-w-2xl w-full bg-obsidian-900/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 md:p-16 text-center shadow-2xl"
+        className="relative z-10 max-w-2xl w-full bg-black/80 backdrop-blur-xl border border-red-900/50 rounded-3xl p-8 md:p-12 shadow-2xl shadow-red-900/20"
       >
-        {/* Pulsing Lock Icon */}
-        <motion.div 
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 3, repeat: Infinity }}
-          className="w-24 h-24 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-gold-500/20"
-        >
-          <Lock size={48} className="text-gold-500" />
-        </motion.div>
-
-        <h1 className="font-serif text-4xl md:text-5xl text-white mb-6 tracking-tight">
-          Access Restricted
-        </h1>
-        
-        <p className="text-slate-400 text-lg mb-12 leading-relaxed">
-          This platform is currently undergoing a <span className="text-gold-400 font-bold">Security Audit</span> and administrative synchronization. Public access is temporarily suspended.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-          {/* Visitor Instructions */}
-          <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-            <div className="flex items-center gap-3 mb-3 text-gold-500">
-              <MessageSquare size={20} />
-              <span className="text-xs font-black uppercase tracking-widest">For Visitors</span>
-            </div>
-            <p className="text-sm text-slate-300">
-              Please contact the institution directly for inquiries or updates.
-            </p>
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-10">
+          <div className="w-20 h-20 bg-red-500/10 rounded-full flex items-center justify-center mb-6 border border-red-500/30 shadow-[0_0_30px_rgba(239,68,68,0.2)]">
+            <ShieldAlert size={40} className="text-red-500" />
           </div>
-
-          {/* Owner Instructions */}
-          <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-            <div className="flex items-center gap-3 mb-3 text-gold-500">
-              <User size={20} />
-              <span className="text-xs font-black uppercase tracking-widest">For the Owner</span>
-            </div>
-            <p className="text-sm text-slate-300">
-              Please contact your <span className="text-white font-bold">Lead Technical Architect</span> to resolve pending deployment protocols.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-white/5">
-          <p className="text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">
-            System Secured by BA Systems Engine
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight uppercase">
+            Security Lockdown
+          </h1>
+          <p className="text-red-400 text-sm font-bold tracking-[0.2em] uppercase">
+            Administrative Access Revoked
           </p>
         </div>
+
+        {/* The Live Counter */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="bg-red-950/30 border border-red-900/30 p-6 rounded-2xl flex flex-col items-center justify-center">
+            <div className="flex items-center gap-2 text-red-400 mb-2">
+              <Activity size={16} className="animate-pulse" />
+              <span className="text-xs font-bold uppercase">Threat Level</span>
+            </div>
+            <span className="text-3xl font-black text-white">CRITICAL</span>
+          </div>
+
+          <div className="bg-red-950/30 border border-red-900/30 p-6 rounded-2xl flex flex-col items-center justify-center">
+            <div className="flex items-center gap-2 text-red-400 mb-2">
+              <Lock size={16} />
+              <span className="text-xs font-bold uppercase">Blocked Attempts</span>
+            </div>
+            <span className="text-3xl font-black text-white tabular-nums">
+              {attempts.toLocaleString()}
+            </span>
+          </div>
+        </div>
+
+        {/* The Live Terminal */}
+        <div className="bg-black border border-slate-800 rounded-xl p-4 font-mono text-xs h-40 overflow-hidden relative">
+          <div className="absolute top-2 right-3 flex gap-1">
+            <div className="w-2 h-2 rounded-full bg-red-500"></div>
+            <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+          </div>
+          <div className="text-slate-500 mb-2 border-b border-slate-800 pb-2 flex items-center gap-2">
+            <Terminal size={12} /> SYSTEM LOGS (LIVE)
+          </div>
+          <div className="space-y-2">
+            {logs.map((log, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className={`${log.includes("BLOCKED") ? "text-red-400" : "text-emerald-400"}`}
+              >
+                {log}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer Message */}
+        <div className="mt-8 pt-6 border-t border-white/5 text-center">
+          <div className="inline-flex items-center gap-2 text-slate-400 text-xs bg-white/5 px-4 py-2 rounded-full">
+            <AlertTriangle size={14} className="text-yellow-500" />
+            <span>Contact Lead Architect to resolve payment & security protocols.</span>
+          </div>
+        </div>
+
       </motion.div>
     </div>
   );
