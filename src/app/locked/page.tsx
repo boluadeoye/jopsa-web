@@ -4,7 +4,7 @@ import { Lock, ShieldAlert, Activity, Terminal, AlertTriangle } from "lucide-rea
 import { useState, useEffect } from "react";
 
 export default function LockedPage() {
-  const [attempts, setAttempts] = useState(14892);
+  const [attempts, setAttempts] = useState(14951);
   const [logs, setLogs] = useState([
     "SYSTEM: Security Protocol Alpha-9 Active",
     "MONITOR: Tracking unauthorized IP signatures...",
@@ -106,11 +106,11 @@ export default function LockedPage() {
           </div>
         </div>
 
-        {/* Footer Message */}
+        {/* Footer Message (Updated) */}
         <div className="mt-8 pt-6 border-t border-white/5 text-center">
           <div className="inline-flex items-center gap-2 text-slate-400 text-xs bg-white/5 px-4 py-2 rounded-full">
             <AlertTriangle size={14} className="text-yellow-500" />
-            <span>Contact Lead Architect to resolve payment & security protocols.</span>
+            <span>Contact Lead Architect to initiate manual security override.</span>
           </div>
         </div>
 
