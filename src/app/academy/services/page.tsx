@@ -45,7 +45,12 @@ export default function ServicesPage() {
               </div>
               <h3 className="font-serif text-2xl text-obsidian-900 mb-4">{s.title}</h3>
               <p className="text-slate-600 leading-relaxed text-sm mb-8">{s.desc}</p>
-              <a href="mailto:jopsa@psa.com?subject=Inquiry about Business Services" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold-600 group-hover:text-obsidian-900">
+              
+              {/* FIXED EMAIL LINK */}
+              <a 
+                href={`mailto:info_peaceserviceacademy@gamip.org?cc=osereme1@gmail.com&subject=Inquiry about ${s.title}`} 
+                className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold-600 group-hover:text-obsidian-900"
+              >
                 Request Service <ArrowRight size={14} />
               </a>
             </motion.div>

@@ -2,9 +2,7 @@
 import { getPrograms } from "@/lib/cms";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, BookOpen, Award } from "lucide-react";
-import Link from "next/link";
 
-// Define types for the animation objects
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -76,9 +74,9 @@ export default function ProgramsPage() {
                   {prog.description}
                 </p>
 
-                {/* Smart CTA */}
+                {/* FIXED EMAIL LINK */}
                 <a 
-                  href={`mailto:info@psa.com?cc=osereme1@gmail.com&subject=Application for ${prog.title} Program`}
+                  href={`mailto:info_peaceserviceacademy@gamip.org?cc=osereme1@gmail.com&subject=Application for ${prog.title} Program`}
                   className="w-full py-4 flex items-center justify-center gap-2 bg-white/5 hover:bg-gold-500 text-white hover:text-obsidian-900 font-bold text-xs uppercase tracking-widest rounded-xl transition-all border border-white/10 hover:border-gold-500"
                 >
                   Enroll Now <ArrowRight size={14} />
@@ -95,7 +93,8 @@ export default function ProgramsPage() {
         <div className="p-8 md:p-12 bg-gradient-to-r from-obsidian-900 to-obsidian-800 rounded-3xl border border-gold-500/20 max-w-4xl mx-auto">
           <h2 className="font-serif text-3xl text-white mb-4">Need Custom Training?</h2>
           <p className="text-slate-400 mb-8">We offer tailored leadership and conflict resolution workshops for organizations.</p>
-          <a href="mailto:info@psa.com?subject=Inquiry for Corporate Training" className="inline-flex items-center gap-3 text-gold-400 hover:text-white font-bold uppercase tracking-widest text-sm transition-colors">
+          {/* FIXED EMAIL LINK */}
+          <a href="mailto:info_peaceserviceacademy@gamip.org?cc=osereme1@gmail.com&subject=Inquiry for Corporate Training" className="inline-flex items-center gap-3 text-gold-400 hover:text-white font-bold uppercase tracking-widest text-sm transition-colors">
             Contact Administration <ArrowRight size={16} />
           </a>
         </div>
