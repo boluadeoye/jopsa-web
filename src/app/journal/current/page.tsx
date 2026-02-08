@@ -1,6 +1,7 @@
 "use client";
 import issues from "@/data/journal/issues.json";
-import { BookOpen } from "lucide-react";
+import { BookOpen, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CurrentIssue() {
   const current = issues[0];
@@ -18,7 +19,7 @@ export default function CurrentIssue() {
         </p>
       </section>
 
-      {/* Clean Table of Contents */}
+      {/* Table of Contents */}
       <section className="max-w-3xl mx-auto px-6 py-16">
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-200">
           <div className="flex items-center gap-3 mb-8 border-b border-slate-100 pb-4">
@@ -28,22 +29,26 @@ export default function CurrentIssue() {
           
           <div className="space-y-0 divide-y divide-slate-100">
             {current.articles.map((art, i) => (
-              <div key={i} className="py-6 flex justify-between items-center group cursor-default">
-                <h3 className="font-serif text-lg md:text-xl text-slate-800 group-hover:text-gold-600 transition-colors pr-8">
-                  {art.title}
-                </h3>
-                <span className="text-xs font-mono text-slate-400 whitespace-nowrap">
-                  pp. {art.pages}
-                </span>
+              <div key={i} className="py-6 group">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-serif text-lg md:text-xl text-slate-800 group-hover:text-gold-600 transition-colors pr-8">
+                    {art.title}
+                  </h3>
+                  <span className="text-xs font-mono text-slate-400 whitespace-nowrap">
+                    pp. {art.pages}
+                  </span>
+                </div>
+                <p className="text-sm text-slate-500 italic mb-4">{art.author}</p>
+                
+                {/* Link to the Reader */}
+                <Link 
+                  href={`/journal/article/${art.slug}`} 
+                  className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-obsidian-900 hover:text-gold-600 transition-colors"
+                >
+                  Read Full Text <ArrowRight size={12} />
+                </Link>
               </div>
             ))}
-          </div>
-          
-          {/* Footer Note (Replaces Download Button) */}
-          <div className="mt-8 pt-6 text-center">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-              Restricted Access • Institutional Use Only
-            </p>
           </div>
         </div>
       </section>
