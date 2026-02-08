@@ -1,0 +1,29 @@
+{
+  "sections": [
+    {
+      "id": "focus-scope",
+      "title": "Focus and Scope",
+      "content": "The Journal of Peace Service Academy (JoPSA) is an open access, double-blind peer-reviewed referral biannual journal. It publishes scholarly works within the scope of peace and management sciences, specifically focusing on conflict & peace science, administrative & management sciences. JoPSA considers original articles and briefings from around the world that are theoretically and methodologically solid, including critical commentaries on topical issues and policies within the journal's scope."
+    },
+    {
+      "id": "peer-review",
+      "title": "Peer Review Process",
+      "content": "JoPSA enforces a rigorous double-blind peer-review process. All manuscripts are anonymized before being sent to at least two independent expert reviewers. Our parameters for evaluation include readability, style of writing, use of literature and theory, appropriateness of methods, significance of data, and overall contribution to knowledge. Manuscripts with a similarity index greater than 20% will be declined for publication."
+    },
+    {
+      "id": "frequency",
+      "title": "Publication Frequency",
+      "content": "The Journal of Peace Service Academy (JoPSA) is published ONLINE twice a year (Biannual), providing a consistent platform for the dissemination of research findings in the fields of peace and management."
+    },
+    {
+      "id": "open-access",
+      "title": "Open Access Policy",
+      "content": "This journal provides immediate open access to its content on the principle that making research freely available to the public supports a greater global exchange of knowledge. Published articles are available for free download on the journal website."
+    },
+    {
+      "id": "copyright",
+      "title": "Copyright and Licensing",
+      "content": "By default, the article copyright belongs to the authors or to the organization that owns the copyright. The author or co-authors retain copyright to the published paper (original work). Any text, tables, figures, or other copyrighted information included must be acknowledged and permission obtained before use."
+    }
+  ]
+}

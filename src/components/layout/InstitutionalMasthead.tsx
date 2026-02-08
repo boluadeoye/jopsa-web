@@ -64,7 +64,7 @@ export default function InstitutionalMasthead() {
                   <li><Link href="/journal/current" className="hover:text-white transition-colors">Current Issue</Link></li>
                   <li><Link href="/journal/archives" className="hover:text-white transition-colors">Archives</Link></li>
                   <li><Link href="/journal/guidelines" className="hover:text-white transition-colors">Submission Portal</Link></li>
-                  <li><Link href="/journal/editorial-board" className="hover:text-white transition-colors">Editorial Board</Link></li>
+                  <li><Link href="/journal/about" className="hover:text-white transition-colors">About the Journal</Link></li>
                 </>
               )}
             </ul>
@@ -92,7 +92,7 @@ export default function InstitutionalMasthead() {
                       <li className="border-b border-white/5 pb-4"><Link href="/journal/current" className="block hover:text-gold-500">Current Issue</Link></li>
                       <li className="border-b border-white/5 pb-4"><Link href="/journal/archives" className="block hover:text-gold-500">Archives</Link></li>
                       <li className="border-b border-white/5 pb-4"><Link href="/journal/guidelines" className="block hover:text-gold-500">Submission Portal</Link></li>
-                      <li className="border-b border-white/5 pb-4"><Link href="/journal/editorial-board" className="block hover:text-gold-500">Editorial Board</Link></li>
+                      <li className="border-b border-white/5 pb-4"><Link href="/journal/about" className="block hover:text-gold-500">About the Journal</Link></li>
                     </>
                   )}
                 </ul>
