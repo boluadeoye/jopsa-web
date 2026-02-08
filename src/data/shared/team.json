@@ -2,9 +2,14 @@
   "director": {
     "name": "Dr. Ose Irene",
     "role": "President / Board Chair",
-    "email": "JoPSA@psa.com",
-    "personal_email": "oseremeirene493@gmail.com",
+    "email": "info_peaceserviceacademy@gamip.org",
+    "personal_email": "osereme1@gmail.com",
     "phone": "+1 204-891-7970"
+  },
+  "managing_editor": {
+    "name": "Dr. Oseremen Irene",
+    "email": "j_peaceserviceacademy@gamip.org",
+    "cc": "osereme1@gmail.com"
   },
   "board": [
     "Dr. Oseremen Irene (Board Chair)",
@@ -43,7 +48,8 @@
     "+234 81 484 735 08"
   ],
   "emails": [
-    "JoPSA@psa.com",
-    "oseremeirene493@gmail.com"
+    "info_peaceserviceacademy@gamip.org",
+    "j_peaceserviceacademy@gamip.org",
+    "osereme1@gmail.com"
   ]
 }
