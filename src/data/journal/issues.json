@@ -1,21 +1,19 @@
 [
   {
-    "id": "vol12-no4",
-    "volume": "Vol 12",
-    "number": "No 4",
+    "id": "vol1-no1",
+    "volume": "Vol 1",
+    "number": "No 1",
     "date": "January 2026",
-    "title": "The Future of Peacekeeping in Digital Frontiers",
-    "cover_color": "#152036",
+    "title": "Peace, Security and Sustainable Infrastructure",
     "featured_article": {
-      "title": "Digital Mediation: A New Framework for Conflict Resolution",
-      "author": "Dr. A. O. Adeoye",
-      "abstract": "This paper explores the efficacy of asynchronous digital communication tools in de-escalating high-tension inter-communal disputes. By analyzing data from three pilot programs in West Africa, we propose a new 'Digital Buffer' framework...",
-      "slug": "digital-mediation-framework"
+      "title": "National Focus on Cybersecurity Needed to Safeguard Renewable Energy Systems",
+      "author": "Adams, B.E",
+      "abstract": "This article examines the urgent need for a national cybersecurity focus to protect renewable energy systems, particularly within emerging economies transitioning toward clean energy.",
+      "slug": "cybersecurity-renewable-energy-systems"
     },
     "articles": [
-      { "title": "Digital Mediation: A New Framework", "author": "Dr. A. O. Adeoye", "pages": "1-15", "slug": "digital-mediation-framework" },
-      { "title": "Conflict Dynamics in West Africa", "author": "B. E. Adams", "pages": "16-32", "slug": "conflict-dynamics" },
-      { "title": "The Role of Informal Committees", "author": "C. Ogunko", "pages": "33-45", "slug": "informal-committees" }
+      { "title": "Farmers-Herders Violence in Ekiti", "author": "Dr. O. F. Irene", "pages": "1-11", "slug": "farmers-herders-violence-ekiti" },
+      { "title": "National Focus on Cybersecurity", "author": "Adams, B.E", "pages": "12-15", "slug": "cybersecurity-renewable-energy-systems" }
     ]
   }
 ]

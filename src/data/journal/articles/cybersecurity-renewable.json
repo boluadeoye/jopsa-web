@@ -1,0 +1,40 @@
+{
+  "slug": "cybersecurity-renewable-energy-systems",
+  "metadata": {
+    "journal": "Journal of Peace Service Academy (JoPSA)",
+    "volume": "Vol. 1",
+    "number": "No. 1",
+    "year": "2026",
+    "pages": "12-15",
+    "issn": "2224-3453",
+    "doi": "10.5555/jopsa.2026.1.1.012"
+  },
+  "title": "National Focus on Cybersecurity Needed to Safeguard Renewable Energy Systems",
+  "authors": [
+    { "name": "Adams, B.E", "title": "" }
+  ],
+  "abstract": "The global transition toward renewable and environmentally sustainable energy systems has accelerated the adoption of decentralized energy infrastructures such as off-grid solar installations, community microgrids, and hybrid energy storage systems. While these technologies promote energy equity, resilience, and environmental sustainability, their increasing reliance on digital platforms, automation, and interconnected technologies has introduced significant cybersecurity risks. This article examines the urgent need for a national cybersecurity focus to protect renewable energy systems, particularly within emerging economies transitioning toward clean energy.",
+  "keywords": ["Cybersecurity", "Renewable Energy", "Decentralized Energy", "Microgrids", "Environmental Sustainability"],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction",
+      "content": "The increasing global focus on environmental sustainability has driven rapid adoption of renewable energy technologies, including solar power, wind energy, and decentralized energy systems such as off-grid installations and microgrids. However, as renewable energy infrastructures become more digitally connected and automated, cybersecurity threats have emerged as a significant risk capable of undermining both energy security and environmental sustainability goals.\n\nRenewable energy systems that were once considered low-risk are now high-value targets for cybercriminals due to their reliance on cloud platforms, Internet of Things (IoT) sensors, and smart meters. Cyber incidents targeting energy infrastructure can disrupt power supply, compromise sensitive operational data, and damage physical equipment."
+    },
+    {
+      "id": "lit-review",
+      "title": "Literature Review",
+      "content": "Decentralized renewable energy systems present unique cybersecurity challenges due to their distributed and interconnected nature. Unlike traditional centralized grids, which rely on a limited number of control points, off-grid and microgrid systems operate across multiple nodes, often in remote locations. This distribution reduces single points of failure but significantly expands the attack surface, increasing vulnerability to cyber threats."
+    },
+    {
+      "id": "recommendations",
+      "title": "Recommendations",
+      "content": "1. Adopt a National Cybersecurity Strategy for Renewable Energy: Governments should recognize renewable energy as critical infrastructure.\n2. Implement Multi-Layered Security Controls: Systems should employ layered defenses, including encryption and intrusion detection.\n3. Strengthen Access Control: Role-based access and multi-factor authentication should be enforced.\n4. Enhance Network Segmentation: Isolating critical control systems from external networks.\n5. Conduct Regular Audits: Continuous security assessments and user awareness training."
+    }
+  ],
+  "references": [
+    "Al-Ghoul, F. H. N., Anwar, N. S., & Reid, J. W. (2021). Securing microgrid systems against cyber threats. IEEE Transactions on Smart Grid.",
+    "Amato, A. M., Myers, D. R., & Lee, H. J. (2021). Building security for the Internet of Things (IoT). Automation in Construction.",
+    "McDonald, C. L., & Reid, J. W. (2021). Cybersecurity for off-grid systems: Best practices and emerging trends. Journal of Energy Storage."
+  ]
+}

@@ -34,5 +34,17 @@
     "title": "Monitoring & Evaluation",
     "description": "Data-driven assessment techniques for impact measurement.",
     "code": "PSA-ME"
+  },
+  {
+    "id": "cybersecurity",
+    "title": "Cybersecurity",
+    "description": "Critical infrastructure protection and safeguarding decentralized energy systems in emerging economies.",
+    "code": "PSA-CYB"
+  },
+  {
+    "id": "peace-ambassador",
+    "title": "Peace Ambassador Training",
+    "description": "Specialized certification for global advocacy, diplomacy, and community-based peace building.",
+    "code": "PSA-PAT"
   }
 ]
