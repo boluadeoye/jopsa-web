@@ -11,7 +11,7 @@ export default function CurrentIssue() {
     <main className="min-h-screen bg-[#F9F8F4] pb-24">
       
       {/* === HERO === */}
-      <section className="relative pt-32 pb-24 px-6 bg-obsidian-950 text-white overflow-hidden">
+      <section className="relative pt-32 pb-24 px-6 bg-obsidian-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold-500/5 blur-[120px] rounded-full pointer-events-none"></div>
         
@@ -67,10 +67,11 @@ export default function CurrentIssue() {
             <h3 className="font-serif text-2xl text-obsidian-900">Table of Contents</h3>
           </div>
 
-          {/* CONDITIONAL RENDERING: Check if articles exist */}
+          {/* CONDITIONAL RENDERING */}
           {current.articles.length > 0 ? (
             <div className="divide-y divide-slate-100">
-              {current.articles.map((art, i) => (
+              {/* FIX: Added (art: any) to bypass TypeScript inference on empty array */}
+              {current.articles.map((art: any, i: number) => (
                 <motion.div 
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
