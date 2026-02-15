@@ -1,19 +1,17 @@
 [
   {
-    "id": "vol1-no1",
-    "volume": "Vol 1",
-    "number": "No 1",
+    "id": "vol12-no4",
+    "volume": "Vol 12",
+    "number": "No 4",
     "date": "January 2026",
-    "title": "Peace, Security and Sustainable Infrastructure",
+    "title": "The Future of Peacekeeping in Digital Frontiers",
+    "cover_color": "#152036",
     "featured_article": {
-      "title": "National Focus on Cybersecurity Needed to Safeguard Renewable Energy Systems",
-      "author": "Adams, B.E",
-      "abstract": "This article examines the urgent need for a national cybersecurity focus to protect renewable energy systems, particularly within emerging economies transitioning toward clean energy.",
-      "slug": "cybersecurity-renewable-energy-systems"
+      "title": "Call for Papers: Volume 12, Issue 4",
+      "author": "Editorial Board",
+      "abstract": "The Journal of Peace Service Academy is currently accepting manuscripts for the upcoming issue. We invite scholars and practitioners to submit original research on conflict transformation, mediation, and leadership.",
+      "slug": "call-for-papers"
     },
-    "articles": [
-      { "title": "Farmers-Herders Violence in Ekiti", "author": "Dr. O. F. Irene", "pages": "1-11", "slug": "farmers-herders-violence-ekiti" },
-      { "title": "National Focus on Cybersecurity", "author": "Adams, B.E", "pages": "12-15", "slug": "cybersecurity-renewable-energy-systems" }
-    ]
+    "articles": []
   }
 ]
